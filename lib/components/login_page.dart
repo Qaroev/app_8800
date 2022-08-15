@@ -1,3 +1,4 @@
+import 'package:app_8800/components/catalog_page.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -17,13 +18,12 @@ class _LoginPageState extends State<LoginPage> {
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
             padding: const EdgeInsets.only(left: 30, right: 30),
-            color: const Color(0xFF9ACFDC),
-            // decoration: const BoxDecoration(
-            //   image: DecorationImage(
-            //     image: AssetImage("assets/images/main.png"),
-            //     fit: BoxFit.cover,
-            //   ),
-            // ),
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("assets/images/main.png"),
+                fit: BoxFit.cover,
+              ),
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -56,14 +56,19 @@ class _LoginPageState extends State<LoginPage> {
                           fontSize: 16,
                           fontWeight: FontWeight.w700),
                     ),
-                    Image.asset(
-                      'assets/images/img.png',
-                      width: 150,
-                      height: 120,
-                    )
+                    // Image.asset(
+                    //   'assets/images/img.png',
+                    //   width: 150,
+                    //   height: 120,
+                    // )
                   ],
                 ),
-                const Spacer(),
+                SizedBox(
+                  height: 50,
+                ),
+                SizedBox(
+                  height: 50,
+                ),
                 textFormField('Номер телефона'),
                 const SizedBox(height: 20),
                 textFormField('Пароль'),
@@ -79,18 +84,24 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
                 const Spacer(),
-                Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: 54,
-                  alignment: Alignment.center,
-                  decoration: const BoxDecoration(
-                      color: Color(0xFFF7F7F7),
-                      borderRadius: BorderRadius.all(Radius.circular(30))),
-                  child: const Text('Войти',
-                      style: TextStyle(
-                          color: Color(0xFF9ACFDC),
-                          fontSize: 24,
-                          fontWeight: FontWeight.w600)),
+                InkWell(
+                  onTap: () {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => CatalogPage()));
+                  },
+                  child: Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: 54,
+                    alignment: Alignment.center,
+                    decoration: const BoxDecoration(
+                        color: Color(0xFFF7F7F7),
+                        borderRadius: BorderRadius.all(Radius.circular(30))),
+                    child: const Text('Войти',
+                        style: TextStyle(
+                            color: Color(0xFF9ACFDC),
+                            fontSize: 24,
+                            fontWeight: FontWeight.w600)),
+                  ),
                 ),
                 const SizedBox(height: 20),
                 const Center(
@@ -122,9 +133,12 @@ class _LoginPageState extends State<LoginPage> {
 
   textFormField(String text) {
     return Container(
-      decoration:  ShapeDecoration(
+      decoration: ShapeDecoration(
         gradient: LinearGradient(
-          colors: [Color(0xFF167B98).withOpacity(0.05), Color(0xFF167B98).withOpacity(0.05)],
+          colors: [
+            Color(0xFF167B98).withOpacity(0.05),
+            Color(0xFF167B98).withOpacity(0.05)
+          ],
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
           stops: [0.0, 0.4],
