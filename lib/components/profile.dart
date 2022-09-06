@@ -19,8 +19,7 @@ class _ProfilePageState extends State<ProfilePage> {
         elevation: 0,
         leading: InkWell(
             onTap: () {
-              // print('sdsad');
-              // Navigator.of(context).pop();
+              Navigator.of(context).pop();
             },
             child: const Icon(Icons.arrow_back_ios)),
       ),
@@ -57,24 +56,214 @@ class _ProfilePageState extends State<ProfilePage> {
                         ],
                       ),
                     ),
-                    Container(
-                        width: MediaQuery.of(context).size.width,
-                        height: 50,
-                        decoration: BoxDecoration(
-                            color: Color(0xFF12CBC4),
-                            borderRadius: BorderRadius.circular(20)),
-                        alignment: Alignment.center,
-                        child: Text(
-                          'Отправить',
-                          textAlign: TextAlign.justify,
+                    TextField(
+                      style: Theme.of(context).inputDecorationTheme.labelStyle,
+                      textCapitalization: TextCapitalization.words,
+                      cursorColor: Colors.black,
+                      decoration: InputDecoration(
+                        labelText: 'Ваше имя',
+                        labelStyle: TextStyle(color: Color(0xFFBDBDBD)),
+                      ),
+                      autocorrect: false,
+                      enableSuggestions: false,
+                      enableInteractiveSelection: false,
+                      keyboardType: TextInputType.text,
+                      textInputAction: TextInputAction.next,
+                    ),
+                    const SizedBox(height: 10),
+                    TextField(
+                      style: Theme.of(context).inputDecorationTheme.labelStyle,
+                      textCapitalization: TextCapitalization.words,
+                      cursorColor: Colors.black,
+                      decoration: InputDecoration(
+                        labelText: 'Ваша почта',
+                        labelStyle: TextStyle(color: Color(0xFFBDBDBD)),
+                      ),
+                      autocorrect: false,
+                      enableSuggestions: false,
+                      enableInteractiveSelection: false,
+                      keyboardType: TextInputType.text,
+                      textInputAction: TextInputAction.next,
+                    ),
+                    const SizedBox(height: 20),
+                    Text('Дата рождения',
+                        style: TextStyle(
+                          color: Color(0xFFBDBDBD),
+                        )),
+                    const SizedBox(height: 20),
+                    Row(
+                      children: [
+                        Container(
+                          width: 62,
+                          height: 30,
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            color: Colors.grey.withOpacity(0.1),
+                            borderRadius: BorderRadius.circular(20)
+                          ),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text('28',
+                                  style: TextStyle(
+                                    color: Color(0xFFBDBDBD),
+                                  )),
+                              Icon(Icons.keyboard_arrow_down_outlined)
+                            ],
+                          ),
+                        ),
+                        const SizedBox(width: 10),
+                        Container(
+                          width: 62,
+                          height: 30,
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            color: Colors.grey.withOpacity(0.1),
+                            borderRadius: BorderRadius.circular(20)
+                          ),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text('04',
+                                  style: TextStyle(
+                                    color: Color(0xFFBDBDBD),
+                                  )),
+                              Icon(Icons.keyboard_arrow_down_outlined)
+                            ],
+                          ),
+                        ),
+                        const SizedBox(width: 10),
+                        Container(
+                          width: 70,
+                          height: 30,
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            color: Colors.grey.withOpacity(0.1),
+                            borderRadius: BorderRadius.circular(20)
+                          ),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text('1987',
+                                  style: TextStyle(
+                                    color: Color(0xFFBDBDBD),
+                                  )),
+                              Icon(Icons.keyboard_arrow_down_outlined)
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 20),
+                    Row(children: [
+                      SizedBox(
+                        width: 10,
+                        child: Radio(
+                          value: 'male',
+                          groupValue: true,
+                          activeColor: Colors.orange,
+                          onChanged: (value) {
+                            //value may be true or false
+                            setState(() {
+                              // gender = value;
+                            });
+                          },
+                        ),
+                      ),
+                      SizedBox(width: 10.0),
+                      Text('Не указывать',
                           style: TextStyle(
-                              color: Color(0xFFFFFFFF),
-                              fontSize: 20,
-                              fontWeight: FontWeight.w700),
-                        ))
+                            color: Color(0xFFBDBDBD),
+                          ))
+                    ]),
+                    Text('Пол',
+                        style: TextStyle(
+                          color: Color(0xFFBDBDBD),
+                        )),
+                    SizedBox(height: 20.0),
+                    Container(
+                      width: 118,
+                      child: Row(
+mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Text('Муж',
+                              style: TextStyle(
+                                color: Colors.black,
+                              )),
+                          Text('Жен',
+                              style: TextStyle(
+                                color: Color(0xFFBDBDBD),
+                              )),
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: 20.0),
+                    Row(children: [
+                      SizedBox(
+                        width: 10,
+                        child: Radio(
+                          value: 'male',
+                          groupValue: true,
+                          activeColor: Colors.orange,
+                          onChanged: (value) {
+                            //value may be true or false
+                            setState(() {
+                              // gender = value;
+                            });
+                          },
+                        ),
+                      ),
+                      SizedBox(width: 10.0),
+                      Text('Не указывать',
+                          style: TextStyle(
+                            color: Color(0xFFBDBDBD),
+                          ))
+                    ]),
+                    SizedBox(height: 20.0),
+                   Row(
+                     children: [
+                       Expanded(
+                         child: Container(
+                             height: 50,
+                             decoration: BoxDecoration(
+                                 color: Color(0xFF12CBC4),
+                                 borderRadius: BorderRadius.circular(20)),
+                             alignment: Alignment.center,
+                             child: Text(
+                               'Сохранить',
+                               textAlign: TextAlign.justify,
+                               style: TextStyle(
+                                   color: Color(0xFFFFFFFF),
+                                   fontSize: 20,
+                                   fontWeight: FontWeight.w700),
+                             )),
+                       ),
+                       SizedBox(width: 15),
+                       Expanded(
+                         child: Container(
+                             height: 50,
+                             decoration: BoxDecoration(
+                                 border: Border.all(color: Color(0xFF12CBC4),),
+                                 borderRadius: BorderRadius.circular(20)),
+                             alignment: Alignment.center,
+                             child: Text(
+                               'Отмена',
+                               textAlign: TextAlign.justify,
+                               style: TextStyle(
+                                   color:  Color(0xFF12CBC4),
+                                   fontSize: 20,
+                                   fontWeight: FontWeight.w700),
+                             )),
+                       ),
+                     ],
+                   )
                   ],
                 ),
-              )
+              ),
+              const SizedBox(height: 20),
             ],
           ),
         ),

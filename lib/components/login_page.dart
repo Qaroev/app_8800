@@ -1,4 +1,5 @@
 import 'package:app_8800/components/catalog_page.dart';
+import 'package:app_8800/components/main.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -28,6 +29,7 @@ class _LoginPageState extends State<LoginPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Spacer(),
+                Spacer(),
                 Row(
                   children: const [
                     Text(
@@ -46,7 +48,6 @@ class _LoginPageState extends State<LoginPage> {
                       fontSize: 32,
                       fontWeight: FontWeight.w700),
                 ),
-                const Spacer(),
                 Row(
                   children: [
                     const Text(
@@ -56,19 +57,18 @@ class _LoginPageState extends State<LoginPage> {
                           fontSize: 16,
                           fontWeight: FontWeight.w700),
                     ),
-                    // Image.asset(
-                    //   'assets/images/img.png',
-                    //   width: 150,
-                    //   height: 120,
-                    // )
+                    SizedBox(width: 50,),
+                    Image.asset(
+                      'assets/images/help.png',
+                      width: 83,
+                      height: 79,
+                    )
                   ],
                 ),
                 SizedBox(
                   height: 50,
                 ),
-                SizedBox(
-                  height: 50,
-                ),
+
                 textFormField('Номер телефона'),
                 const SizedBox(height: 20),
                 textFormField('Пароль'),
@@ -87,7 +87,7 @@ class _LoginPageState extends State<LoginPage> {
                 InkWell(
                   onTap: () {
                     Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => CatalogPage()));
+                        MaterialPageRoute(builder: (context) => MainPage()));
                   },
                   child: Container(
                     width: MediaQuery.of(context).size.width,
@@ -112,7 +112,9 @@ class _LoginPageState extends State<LoginPage> {
                       fontSize: 14,
                       fontWeight: FontWeight.w500),
                 )),
-                const Spacer(),
+                SizedBox(
+                  height: 50,
+                ),
                 const Center(
                   child: Text(
                     '© 2021-2022 все права защищены.',
@@ -122,7 +124,9 @@ class _LoginPageState extends State<LoginPage> {
                         fontWeight: FontWeight.w500),
                   ),
                 ),
-                const SizedBox(height: 20),
+                SizedBox(
+                  height: 40,
+                ),
               ],
             ),
           ),
